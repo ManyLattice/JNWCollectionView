@@ -1089,9 +1089,9 @@ static void JNWCollectionViewCommonInit(JNWCollectionView *collectionView) {
 
 	// Detect if modifier flags are held down.
 	// We prioritize the command key over the shift key.
-	if (event.modifierFlags & NSCommandKeyMask) {
+    if (event.modifierFlags & NSEventModifierFlagCommand) {
 		[self selectItemAtIndexPath:indexPath atScrollPosition:JNWCollectionViewScrollPositionNearest animated:YES selectionType:JNWCollectionViewSelectionTypeMultiple];
-	} else if (event.modifierFlags & NSShiftKeyMask) {
+    } else if (event.modifierFlags & NSEventModifierFlagShift) {
 		[self selectItemAtIndexPath:indexPath atScrollPosition:JNWCollectionViewScrollPositionNearest animated:YES selectionType:JNWCollectionViewSelectionTypeExtending];
 	} else {
 		[self selectItemAtIndexPath:indexPath atScrollPosition:JNWCollectionViewScrollPositionNearest animated:YES];
